@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  db:
+    image: mysql
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    expose:
+      - "3306"
+
+  web:
+    image: leen15/espocrm
+    depends_on:
+      - db
+    ports:
+      - "8888:80"
