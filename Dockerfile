@@ -12,7 +12,7 @@ ENV PROJECT_PATH=/var/www \
     APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     PHP_MODS_CONF=/etc/php/5.6/mods-available \
     PHP_INI=/etc/php/5.6/apache2/php.ini \
-    ESPO_VERSION=4.6.0 \
+    ESPO_VERSION=5.0.2 \
     TERM=xterm
 
 # Use PHP5.6 instead of PHP5.5 (need to manually add repo key)
