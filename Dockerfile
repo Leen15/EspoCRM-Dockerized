@@ -2,6 +2,9 @@ FROM ubuntu:14.04
 
 MAINTAINER Luca Mattivi <luca@smartdomotik.com>
 
+ARG TIMEZONE="Europe/Paris"
+ARG ESPO_VERSION=5.3.6
+
 ENV PROJECT_PATH=/var/www \
     PROJECT_URL=uala.it \
     DEBIAN_FRONTEND=noninteractive \
@@ -12,7 +15,6 @@ ENV PROJECT_PATH=/var/www \
     APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     PHP_MODS_CONF=/etc/php/5.6/mods-available \
     PHP_INI=/etc/php/5.6/apache2/php.ini \
-    ESPO_VERSION=5.0.2 \
     TERM=xterm
 
 # Use PHP5.6 instead of PHP5.5 (need to manually add repo key)
@@ -68,7 +70,7 @@ RUN echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
     a2enconf fqdn
 
 # Set the timezone.
-RUN sudo echo "Europe/Paris" > /etc/timezone && \
+RUN sudo echo $TIMEZONE > /etc/timezone && \
     sudo dpkg-reconfigure -f noninteractive tzdata
 
 # Add our crontab file
