@@ -16,5 +16,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
+    volumes:
+      - "./espocrm-data:/var/www/data"
     ports:
       - "8888:80"
