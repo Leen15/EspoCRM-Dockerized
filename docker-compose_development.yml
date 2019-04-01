@@ -2,9 +2,9 @@ version: '2'
 
 services:
   db:
-    image: mysql
-    volumes:
-      - "./.data/db:/var/lib/mysql"
+    image: mysql:5.7.24
+    #volumes:
+    #  - "./.data/db:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: secret
     expose:
@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
-    volumes:
-      - "./espocrm-data:/var/www/data"
+    #volumes:
+    #  - "./espocrm-data:/var/www/data"
     ports:
       - "8888:80"
