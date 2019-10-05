@@ -10,7 +10,7 @@ If you want, you can use docker-compose with this command:
 
 and go to `http://localhost:8888/install` for the initial wizard.
 
-This image uses Ubuntu `18.04`, PHP `7.2` and EspoCRM version **`5.6.2`**.
+This image uses Ubuntu `18.04`, PHP `7.2` and EspoCRM version **`5.7.0`**.
 
 If you need another version, just change `ESPO_VERSION` env and build a new image.
 
