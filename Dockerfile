@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 LABEL maintainer Luca Mattivi <luca@smartdomotik.com>
 
 ARG TIMEZONE="Europe/Paris"
-ARG ESPO_VERSION=5.9.4
+ARG ESPO_VERSION=6.0.9
 
 ENV PROJECT_PATH=/var/www \
     PROJECT_URL=uala.it \
